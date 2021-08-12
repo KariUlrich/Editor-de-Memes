@@ -89,7 +89,7 @@
                     <input type="range" class="input-range" id="input-negativo" name="negativo" min="0" max="1" step="0.1" value="0">
             </div>
             <div>
-                <button class="reestablecerFiltros">Reestablecer filtros</button>
+                <button class="reestablecerFiltros">Restablecer filtros</button>
             </div>
         </form>    
     </aside>
@@ -127,9 +127,9 @@
            <div class="size-letra">
             <input type="number" class="size" id="size" min="10">
             <div class="orientacion">
-            <button class="b-izquierda" id="b-izquierda"><i class="fas fa-align-left"></i></button>
-            <button class="b-centro" id="b-centro"><i class="fas fa-align-center"></i></button>
-            <button class="b-derecha" id="b-derecha"><i class="fas fa-align-right"></i></button>
+            <button class="b-izquierda" id="boton-izquierda"><i class="fas fa-align-left"></i></button>
+            <button class="b-centro" id="boton-centro"><i class="fas fa-align-center"></i></button>
+            <button class="b-derecha" id="boton-derecha"><i class="fas fa-align-right"></i></button>
             </div>
           </div>
           <div class="color-fondo">
@@ -137,14 +137,14 @@
               <h3>COLOR </h3>
               <div class="div-div-color">
                 <input name="colorTexto" type="color" class="input-paleta-color" id="input-color-texto" value="#000000">
-                <span>#000000</span>
+                <span id="numero-texto-color">#000000</span>
               </div>
               </div>        
             <div class="div-fondo">
               <h3>FONDO</h3>
               <div class="div-div-fondo">
                 <input name="colorFondo" type="color" class="input-paleta-color" id="input-color-fondo" value="#FFFFFF">
-                <span>#FFFFFF</span>
+                <span id="numero-texto-fondo">#FFFFFF</span>
               </div>
             </div>        
           </div>
@@ -163,14 +163,14 @@
             <div class="div-espaciado">
             <label for="espaciado">
               <h3>ESPACIADO</h3>
-              <input type="number" class="espaciado" id="espaciado">
+              <input type="number" class="espaciado" id="input-espaciado">
             </label>
             </div>
             
             <div class="div-interlineado">
               <label for="interlineado">
               <h3>INTERLINEADO</h3>
-              <select name="interlineado" class="interlineado" id="interlineado">
+              <select name="interlineado" class="interlineado" id="select-interlineado">
               <option value="0.8">0.8</option>
               <option value="1">1</option>
               <option value="1.2">1.2</option>

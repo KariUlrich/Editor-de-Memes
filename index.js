@@ -16,7 +16,7 @@ const mostrarDivTexto = () =>{
 botonImagen.onclick = mostrarDivImagen
 botonTexto.onclick = mostrarDivTexto
 // ---------------------------------------------------------------------------------------------
-// Formulario Imagen
+/////////////////////////////////////////////// Formulario Imagen
 // URL
 const inputImagen = document.querySelector(".url-imagen")
 const verImagen = document.getElementById("meme")
@@ -34,7 +34,7 @@ fondoImagen.oninput = () => {
     divImagen.style.backgroundColor = fondoImagen.value // div que contiene al meme - input color imagen
     textoColorFondo.textContent = fondoImagen.value
 }
-// Apariencia del fondo - No me sale
+// Apariencia del fondo - No funciona
 
 const tipoDeFondo = document.getElementById("mezclaDeFondo")
 
@@ -104,11 +104,9 @@ restablecerFiltros.onclick = () => {
     inputHue.value = 0
     inputSaturado.value = 100
     inputNegativo.value = 0
-       formularioImagen.style.display = "flex"
 }
-//-----------------------------------------------------------------------------------------
 
-// Formulario Texto
+/////////////////////////////////////////////////// Formulario Texto
 // Superior e Inferior
 
 const inputTextoSuperior = document.getElementById("superior")
@@ -154,10 +152,10 @@ sinTextoInferior.oninput = () => {
     }
 }
 
-//Sintexto
+//Sintexto - NO FUNCIONA
  const sinTextoSuperiorEInferior = document.querySelectorAll(".sin-ningun-texto")
 
- inTextoSuperiorEInferior.oninput = () => {
+ sinTextoSuperiorEInferior.oninput = () => {
     if(inTextoSuperiorEInferior.checked) {
         verTextoSuperior.style.display = "none";
         verTextoInferior.style.display = "none";
@@ -166,44 +164,112 @@ sinTextoInferior.oninput = () => {
     
 }
 
-
 // Tipo Fuente
 const tipoDeFuente = document.getElementById("elegir-fuente")
 tipoDeFuente.oninput = () => {
     verTextoSuperior.style.fontFamily = tipoDeFuente.value 
     verTextoInferior.style.fontFamily = tipoDeFuente.value 
 }
+
 // Tamanio de fuente
 const tamanioDeFuente = document.getElementById("size")
 tamanioDeFuente.oninput = () => {
     verTextoSuperior.style.fontSize = tamanioDeFuente.value + "px"
     verTextoInferior.style.fontSize = tamanioDeFuente.value + "px"
 }
-// Alineado - no funciona
-const alineadoIzquierda = document.getElementById("b-izquierda")
-alineadoIzquierda.onclick = () => {
+
+// Alineado - NO FUNCIONA
+const botonI = document.querySelector(".b-izquierda")
+const botonC = document.querySelector(".b-centro")
+const botonD = document.querySelector(".b-derecha")
+
+botonI.onclick = () => {
     verTextoSuperior.style.textAlign = "left"
     verTextoInferior.style.textAlign = "left"
 }
-const alineadoCentro = document.getElementById("b-centro")
-alineadoCentro.onclick = () => {
+
+botonC.onclick = () => {
     verTextoSuperior.style.textAlign = "center"
     verTextoInferior.style.textAlign = "center"
 }
-const alineadoDerecha = document.getElementById("b-derecha")
-alineadoDerecha.onclick = () => {
+
+botonD.onclick = () => {
     verTextoSuperior.style.textAlign = "right"
     verTextoInferior.style.textAlign = "right"
 }
 
 // Color y Fondo - debe ser igual que color de fondo
+
+const inputColorTexto = document.getElementById("input-color-texto")
+const inputColorFondo = document.getElementById("input-color-fondo")
+const spanNumeroColor = document.getElementById("numero-texto-color")
+const spanNumeroFondo = document.getElementById("numero-texto-fondo")
+
+inputColorTexto.oninput = () => {
+    verTextoSuperior.style.color = inputColorTexto.value
+    verTextoInferior.style.color = inputColorTexto.value
+    spanNumeroColor.textContent = inputColorTexto.value
+}
+inputColorFondo.oninput = () => {
+    verTextoSuperior.style.backgroundColor = inputColorFondo.value
+    verTextoInferior.style.backgroundColor = inputColorFondo.value
+    spanNumeroFondo.textContent = inputColorFondo.value
+}
+
 // Fondo transparente
 
-// Contorno
+const fondoTransparente = document.getElementById("fondo-transparente")
+
+fondoTransparente.oninput = () => {
+    if(fondoTransparente.checked){
+        verTextoSuperior.style.backgroundColor = "transparent"
+        verTextoInferior.style.backgroundColor = "transparent"
+    }
+    else{
+        verTextoSuperior.style.backgroundColor = inputColorFondo.value
+        verTextoInferior.style.backgroundColor = inputColorFondo.value
+    }
+}
+
+// Contorno - NO FUNCIONA
+const botonContornoClaro = document.getElementById("claro")
+const botonContornoOscuro = document.getElementById("oscuro")
+const botonSinContorno = document.getElementById("ninguno")
+
+botonContornoClaro.onclick = () => {
+    verTextoSuperior.style.textShadow = "2px 2px 2px grey"
+    verTextoInferior.style.textShadow = "2px 2px 2px grey"
+}
+    
+botonContornoOscuro.onclick = () => {
+    verTextoSuperior.style.textShadow = "2px 2px 2px black"
+    verTextoInferior.style.textShadow = "2px 2px 2px black"
+}    
+
+botonSinContorno.onclick = () => {
+    verTextoSuperior.style.textShadow = "none"
+    verTextoInferior.style.textShadow = "none"
+} 
 
 // Espaciado
+const espaciado = document.getElementById("input-espaciado")
 
-// Interlineado
+const hacerEspacio = () => {
+    verTextoSuperior.style.paddingTop = espaciado.value + "px"
+    verTextoSuperior.style.paddingBottom = espaciado.value + "px"
+    verTextoInferior.style.paddingTop = espaciado.value + "px"
+    verTextoInferior.style.paddingBottom = espaciado.value + "px"
+}
+espaciado.onclick = hacerEspacio
+
+// Interlineado - NO FUNCIONA
+const interlineado = document.getElementById("select-interlineado")
+
+const hacerInterlineado = () => {
+    verTextoSuperior.style.lineHeight = interlineado.value
+    verTextoInferior.style.lineHeight = interlineado.value
+}
+interlineado.onclick = hacerInterlineado
 
 //----------------------------------------------------------------------------------------------------
 // Modo Oscuro
@@ -217,22 +283,16 @@ const formTexto = document.querySelector(".formulario-texto") // form texto - gr
 const tituloImagen = document.querySelector(".formulario-imagen") //Titulo imagen - gris oscuro
 const tituloTexto = document.querySelector(".formulario-texto") //Titulo imagen - gris oscuro
 const inputFondo = document.querySelector(".div-solo-input") // input - gris 
-// const tipoDeFondo = document.querySelector(".mezclaDeFondo ") // input y texto - gris mas claro y letra muy oscura
-// const restablecerFiltros = document.querySelector(".reestablecer-filtros")// input y texto - gris mas claro y letra muy oscura
 const textareaS = document.getElementById("superior") // input y texto - gris mas claro y letra muy oscura
 const textareaI = document.getElementById("inferior") 
 const elegirFuente = document.getElementById("elegir-fuente") // input y texto - gris mas claro y letra muy oscura
 const size = document.querySelector(".size")
-const botonI = document.querySelector(".b-izquierda")
-const botonC = document.querySelector(".b-centro")
-const botonD = document.querySelector(".b-derecha")
 const colorColor = document.querySelector(".div-div-color")  // input y texto - gris mas claro y letra muy oscura
 const colorFondo = document.querySelector(".div-div-fondo")  // input y texto - gris mas claro y letra muy oscura
 const contornoN = document.querySelector(".ninguno")
 const contornoC = document.querySelector(".claro")
 const contornoO = document.querySelector(".oscuro")
-const botonEspaciado = document.querySelector(".espaciado") //input y texto - gris mas claro y letra muy oscura
-const botonInterlineado = document.querySelector(".interlineado") //input y texto - gris mas claro y letra muy oscura
+
 
 
 const activarModoOscuro = () => {
@@ -263,8 +323,8 @@ const activarModoOscuro = () => {
     contornoN.classList.toggle("modo-oscuro-gris")
     contornoC.classList.toggle("modo-oscuro-gris")
     contornoO.classList.toggle("modo-oscuro-gris")
-    botonEspaciado.classList.toggle("modo-oscuro-gris")
-    botonInterlineado.classList.toggle("modo-oscuro-gris")
+    espaciado.classList.toggle("modo-oscuro-gris")
+    interlineado.classList.toggle("modo-oscuro-gris")
     botonImagen.classList.toggle("estilBoton")
     botonTexto.classList.toggle("estilBoton")
     botonModoOscuro.classList.toggle("estilBoton")
