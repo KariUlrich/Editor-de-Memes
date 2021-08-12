@@ -1,4 +1,4 @@
-// Cambiar de formulario
+// Cambiar de formulario - imagen/texto
 
 const formularioImagen = document.querySelector(".formulario-imagen")
 const botonImagen = document.querySelector(".div-imagen")
@@ -34,11 +34,78 @@ fondoImagen.oninput = () => {
     divImagen.style.backgroundColor = fondoImagen.value // div que contiene al meme - input color imagen
     textoColorFondo.textContent = fondoImagen.value
 }
-// Mezcla
+// Apariencia del fondo - No me sale
+
+const tipoDeFondo = document.getElementById("mezclaDeFondo")
+
+// const cambiarFondo = () => {
+//     if (tipoDeFondo === "Aclarar"){
+//         verImagen.style.backgroundBlendMode = "lighten"
+//     }
+//     else {
+//         verImagen.style.backgroundBlendMode = "none"
+//     }
+// }
+// tipoDeFondo.onclick = cambiarFondo
+
+tipoDeFondo.onchange = () => {
+    if (tipoDeFondo === "Aclarar"){
+        verImagen.style.backgroundBlendMode = "lighten"
+    }
+    else {
+        verImagen.style.backgroundBlendMode = "none"
+    }
+}
+
 // Filtos
+const inputFiltroBrillo = document.getElementById("input-brillo")
+const inputFiltroOpacidad = document.getElementById("input-opacidad")
+const inputFiltroContraste = document.getElementById("input-contraste")
+const inputFiltroDesenfoque = document.getElementById("input-desenfoque")
+const inputFiltroEscalaDeGrises = document.getElementById("input-escalaDeGrises")
+const inputFiltroSepia = document.getElementById("input-sepia")
+const inputFiltroHue = document.getElementById("input-hue")
+const inputFiltroSaturado = document.getElementById("input-saturado")
+const inputFiltroNegativo = document.getElementById("input-negativo")
 
-// Restablecer filtros
+const cambiarFiltros = () => {
+    const brightness = inputFiltroBrillo.value
+    const opacity = inputFiltroOpacidad.value
+    const blur = inputFiltroDesenfoque.value
+    const contrast = inputFiltroContraste.value
+    const grayscale = inputFiltroEscalaDeGrises.value
+    const hue = inputFiltroHue.value
+    const sepia = inputFiltroSepia.value
+    const saturate = inputFiltroSaturado.value
+    const invert = inputFiltroNegativo.value
+    verImagen.style.filter = `brightness(${brightness}) opacity(${opacity}) blur(${blur}px) contrast(${contrast}%) grayscale(${grayscale}%) hue-rotate(${hue}deg) sepia(${sepia}%) saturate(${saturate}%) invert(${invert})`
+}
+inputFiltroBrillo.onchange = cambiarFiltros
+inputFiltroOpacidad.onchange = cambiarFiltros
+inputFiltroContraste.onchange = cambiarFiltros
+inputFiltroDesenfoque.onchange = cambiarFiltros
+inputFiltroEscalaDeGrises.onchange = cambiarFiltros
+inputFiltroHue.onchange = cambiarFiltros
+inputFiltroSepia.onchange = cambiarFiltros
+inputFiltroSaturado.onchange = cambiarFiltros
+inputFiltroNegativo.onchange = cambiarFiltros
 
+
+// Boton Restablecer filtros - No funciona
+const restablecerFiltros = document.querySelector(".reestablecerFiltros")
+
+restablecerFiltros.onclick = () => {
+    inputBrillo.value = 1
+    inputOpacidad.value = 1
+    inputContraste.value = 0
+    inputDesenfoque.value = 0
+    inputEscalaDeGrises.value = 0
+    inputSepia.value = 0
+    inputHue.value = 0
+    inputSaturado.value = 100
+    inputNegativo.value = 0
+       formularioImagen.style.display = "flex"
+}
 //-----------------------------------------------------------------------------------------
 
 // Formulario Texto
@@ -86,6 +153,19 @@ sinTextoInferior.oninput = () => {
         divImagen.classList.remove("imagen-sin-texto-superior");
     }
 }
+
+//Sintexto
+ const sinTextoSuperiorEInferior = document.querySelectorAll(".sin-ningun-texto")
+
+ inTextoSuperiorEInferior.oninput = () => {
+    if(inTextoSuperiorEInferior.checked) {
+        verTextoSuperior.style.display = "none";
+        verTextoInferior.style.display = "none";
+        divImagen.classList.add("imagen-sin-texto-superior-inferior");
+    }
+    
+}
+
 
 // Tipo Fuente
 const tipoDeFuente = document.getElementById("elegir-fuente")
@@ -137,8 +217,8 @@ const formTexto = document.querySelector(".formulario-texto") // form texto - gr
 const tituloImagen = document.querySelector(".formulario-imagen") //Titulo imagen - gris oscuro
 const tituloTexto = document.querySelector(".formulario-texto") //Titulo imagen - gris oscuro
 const inputFondo = document.querySelector(".div-solo-input") // input - gris 
-const tipoDeFondo = document.querySelector(".mezclaDeFondo ") // input y texto - gris mas claro y letra muy oscura
-const restablecerFiltros = document.querySelector(".reestablecerFiltros")// input y texto - gris mas claro y letra muy oscura
+// const tipoDeFondo = document.querySelector(".mezclaDeFondo ") // input y texto - gris mas claro y letra muy oscura
+// const restablecerFiltros = document.querySelector(".reestablecer-filtros")// input y texto - gris mas claro y letra muy oscura
 const textareaS = document.getElementById("superior") // input y texto - gris mas claro y letra muy oscura
 const textareaI = document.getElementById("inferior") 
 const elegirFuente = document.getElementById("elegir-fuente") // input y texto - gris mas claro y letra muy oscura

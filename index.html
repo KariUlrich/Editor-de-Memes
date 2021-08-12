@@ -43,7 +43,7 @@
         </button>
     </section>    
     </main>
-    <section class="formulario-imagen letra">
+    <aside class="formulario-imagen letra">
         <form class="form-imagen">
             <h2>IMAGEN</h2>
             <div clase="div-url izquierda">
@@ -70,37 +70,37 @@
             <div class="div-filtros izquierda">
                 <h3>Filtros</h3>
                     <label for = "brillo" class="label-range">BRILLO</label>
-                    <input type="range" class="input-range" id="brillo" name="brillo" min="0" max="1" step="0.1" value="1">                                         
+                    <input type="range" class="input-range" id="input-brillo" name="brillo" min="0" max="1" step="0.1" value="1">                                         
                     <label for = "opacidad" class="label-range">OPACIDAD</label>
-                    <input type="range" class="input-range" id="opacidad" name="opacidad" min="0" max="1" step="0.1" value="1">            
+                    <input type="range" class="input-range" id="input-opacidad" name="opacidad" min="0" max="1" step="0.1" value="1">            
                     <label for = "contraste" class="label-range">CONTRSTE</label>
-                    <input type="range" class="input-range" id="contraste" name="contraste" min="100" max="1000" step="1" value="100">               
+                    <input type="range" class="input-range" id="input-contraste" name="contraste" min="100" max="1000" step="1" value="100">               
                     <label for = "desenfoque" class="label-range">DESENFOQUE</label>
-                    <input type="range" class="input-range" id="desenfoque" name="desenfoque" min="0" max="10" step="0.1" value="0">               
+                    <input type="range" class="input-range" id="input-desenfoque" name="desenfoque" min="0" max="10" step="0.1" value="0">               
                     <label for = "escalDeGrises" class="label-range" >ESCALA DE GRISES</label>
-                    <input type="range" class="input-range" id="escalaDeGrises" name="esacalaDeGrises" min="0" max="100" step="1" value="0">               
+                    <input type="range" class="input-range" id="input-escalaDeGrises" name="esacalaDeGrises" min="0" max="100" step="1" value="0">               
                     <label for = "sepia" class="label-range">SEPIA</label>
-                    <input type="range" class="input-range" id="sepia" name="sepia" min="0" max="100" step="1" value="0">               
+                    <input type="range" class="input-range" id="input-sepia" name="sepia" min="0" max="100" step="1" value="0">               
                     <label for = "hue" class="label-range">HUE</label>
-                    <input type="range" class="input-range" id="hue" name="hue" min="0" max="359" step="1" value="0">               
+                    <input type="range" class="input-range" id="input-hue" name="hue" min="0" max="359" step="1" value="0">               
                     <label for = "saturado" class="label-range">SATURADO</label>
-                    <input type="range" class="input-range" id="saturado" name="saturado" min="100" max="100" step="10" value="100">               
+                    <input type="range" class="input-range" id="input-saturado" name="saturado" min="100" max="100" step="10" value="100">               
                     <label for = "negativo" class="label-range">NEGATIVO</label>
-                    <input type="range" class="input-range" id="negativo" name="negativo" min="0" max="1" step="0.1" value="0">
+                    <input type="range" class="input-range" id="input-negativo" name="negativo" min="0" max="1" step="0.1" value="0">
             </div>
             <div>
                 <button class="reestablecerFiltros">Reestablecer filtros</button>
             </div>
         </form>    
-    </section>
-    <section class="formulario-texto letra ocultar">
+    </aside>
+    <aside class="formulario-texto letra ocultar">
         <form class="form-texto">
             <h2>TEXTO</h2>
             <div class="div-superior">
                 <h3>SUPERIOR</h3>
                 <textarea name="texto" id="superior" cols="50" rows="2"> TOP TEXT</textarea>
                 <div class="checkbox-superior">
-                <input type="checkbox" id="input-sin-texto-superior">
+                <input type="checkbox" id="input-sin-texto-superior" class="sin-ningun-texto">
                 <label for="superior" id="superior">Sin texto superior</label> 
                 </div>
             </div>
@@ -108,7 +108,7 @@
                 <h3>INFERIOR</h3>
                 <textarea name="texto" id="inferior" cols="50" rows="2"> BOTTOM TEXT</textarea>
                 <div class="checkbox-inferior">
-                <input type="checkbox" id="input-sin-texto-inferior">
+                <input type="checkbox" id="input-sin-texto-inferior"class="sin-ningun-texto">
                 <label for="inferior" id="inferior">Sin texto inferior</label> 
                 </div>
             </div>
@@ -181,7 +181,7 @@
             </label>
            </div>
         </form>
-    </section>  
+    </aside>  
 
 
 
