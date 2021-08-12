@@ -1,0 +1,204 @@
+// Cambiar de formulario
+
+const formularioImagen = document.querySelector(".formulario-imagen")
+const botonImagen = document.querySelector(".div-imagen")
+const formularioTexto = document.querySelector(".formulario-texto")
+const botonTexto = document.querySelector(".div-texto")
+
+const mostrarDivImagen = () =>{
+    formularioTexto.style.display = "none"
+    formularioImagen.style.display = "flex"
+}
+const mostrarDivTexto = () =>{
+    formularioImagen.style.display = "none"
+    formularioTexto.style.display = "flex"
+}
+botonImagen.onclick = mostrarDivImagen
+botonTexto.onclick = mostrarDivTexto
+// ---------------------------------------------------------------------------------------------
+// Formulario Imagen
+// URL
+const inputImagen = document.querySelector(".url-imagen")
+const verImagen = document.getElementById("meme")
+
+inputImagen.oninput = () => {
+    verImagen.src = inputImagen.value
+}
+
+// Fondo
+const fondoImagen = document.getElementById("colorFondo")
+const textoColorFondo = document.querySelector(".texto-colorFondo")
+const divImagen = document.querySelector(".imagen-entretexto")
+
+fondoImagen.oninput = () => {
+    divImagen.style.backgroundColor = fondoImagen.value // div que contiene al meme - input color imagen
+    textoColorFondo.textContent = fondoImagen.value
+}
+// Mezcla
+// Filtos
+
+// Restablecer filtros
+
+//-----------------------------------------------------------------------------------------
+
+// Formulario Texto
+// Superior e Inferior
+
+const inputTextoSuperior = document.getElementById("superior")
+const inputTextoInferior = document.getElementById("inferior")
+const verTextoSuperior = document.getElementById("texto-superior")
+const verTextoInferior = document.getElementById("texto-inferior")
+
+inputTextoSuperior.oninput = () => {
+    verTextoSuperior.textContent = inputTextoSuperior.value
+}
+
+inputTextoInferior.oninput = () => {
+    verTextoInferior.textContent = inputTextoInferior.value
+}
+//Sin texto superior y sin texto inferior - falta si clequeo los dos
+
+const sinTextoSuperior = document.getElementById("input-sin-texto-superior")
+const sinTextoInferior = document.getElementById("input-sin-texto-inferior")
+
+sinTextoSuperior.oninput = () => {
+    if(sinTextoSuperior.checked) {
+        verTextoSuperior.style.display = "none";
+        divImagen.classList.add("imagen-sin-texto-superior");
+    }
+    else {
+        verTextoSuperior.style.display = "flex";
+        divImagen.classList.remove("imagen-sin-texto-superior");
+    }
+}
+sinTextoInferior.oninput = () => {
+    if(sinTextoInferior.checked) {
+        verTextoInferior.style.display = "none";
+        divImagen.classList.add("imagen-sin-texto-superior");
+    }
+    // else if (sinTextoSuperior.checked && sinTextoInferior.cheked) {
+    //     verTextoSuperior.style.display = "none";
+    //     verTextoInferior.style.display = "none";
+    //     divImagen.classList.add("imagen-sin-texto-superior-inferior");
+    // }
+    else {
+        verTextoInferior.style.display = "flex";
+        divImagen.classList.remove("imagen-sin-texto-superior");
+    }
+}
+
+// Tipo Fuente
+const tipoDeFuente = document.getElementById("elegir-fuente")
+tipoDeFuente.oninput = () => {
+    verTextoSuperior.style.fontFamily = tipoDeFuente.value 
+    verTextoInferior.style.fontFamily = tipoDeFuente.value 
+}
+// Tamanio de fuente
+const tamanioDeFuente = document.getElementById("size")
+tamanioDeFuente.oninput = () => {
+    verTextoSuperior.style.fontSize = tamanioDeFuente.value + "px"
+    verTextoInferior.style.fontSize = tamanioDeFuente.value + "px"
+}
+// Alineado - no funciona
+const alineadoIzquierda = document.getElementById("b-izquierda")
+alineadoIzquierda.onclick = () => {
+    verTextoSuperior.style.textAlign = "left"
+    verTextoInferior.style.textAlign = "left"
+}
+const alineadoCentro = document.getElementById("b-centro")
+alineadoCentro.onclick = () => {
+    verTextoSuperior.style.textAlign = "center"
+    verTextoInferior.style.textAlign = "center"
+}
+const alineadoDerecha = document.getElementById("b-derecha")
+alineadoDerecha.onclick = () => {
+    verTextoSuperior.style.textAlign = "right"
+    verTextoInferior.style.textAlign = "right"
+}
+
+// Color y Fondo - debe ser igual que color de fondo
+// Fondo transparente
+
+// Contorno
+
+// Espaciado
+
+// Interlineado
+
+//----------------------------------------------------------------------------------------------------
+// Modo Oscuro
+const botonModoOscuro = document.getElementById("boton-modo-oscuro") // boton
+
+const generadorDeMeme = document.querySelector("h1") // Titulo - gris oscuro
+const header = document.querySelector(".section1") // header - gris mas claro
+const body = document.querySelector("body") // body
+const formImagen = document.querySelector(".formulario-imagen") // form imagen - gris muy blanco
+const formTexto = document.querySelector(".formulario-texto") // form texto - gris muy blanco
+const tituloImagen = document.querySelector(".formulario-imagen") //Titulo imagen - gris oscuro
+const tituloTexto = document.querySelector(".formulario-texto") //Titulo imagen - gris oscuro
+const inputFondo = document.querySelector(".div-solo-input") // input - gris 
+const tipoDeFondo = document.querySelector(".mezclaDeFondo ") // input y texto - gris mas claro y letra muy oscura
+const restablecerFiltros = document.querySelector(".reestablecerFiltros")// input y texto - gris mas claro y letra muy oscura
+const textareaS = document.getElementById("superior") // input y texto - gris mas claro y letra muy oscura
+const textareaI = document.getElementById("inferior") 
+const elegirFuente = document.getElementById("elegir-fuente") // input y texto - gris mas claro y letra muy oscura
+const size = document.querySelector(".size")
+const botonI = document.querySelector(".b-izquierda")
+const botonC = document.querySelector(".b-centro")
+const botonD = document.querySelector(".b-derecha")
+const colorColor = document.querySelector(".div-div-color")  // input y texto - gris mas claro y letra muy oscura
+const colorFondo = document.querySelector(".div-div-fondo")  // input y texto - gris mas claro y letra muy oscura
+const contornoN = document.querySelector(".ninguno")
+const contornoC = document.querySelector(".claro")
+const contornoO = document.querySelector(".oscuro")
+const botonEspaciado = document.querySelector(".espaciado") //input y texto - gris mas claro y letra muy oscura
+const botonInterlineado = document.querySelector(".interlineado") //input y texto - gris mas claro y letra muy oscura
+
+
+const activarModoOscuro = () => {
+    generadorDeMeme.classList.toggle("modo-oscuro-gris-oscuro")
+    botonImagen.classList.toggle("modo-oscuro-gris")
+    botonTexto.classList.toggle("modo-oscuro-gris")
+    botonModoOscuro.classList.toggle("modo-oscuro-gris")
+    restablecerFiltros.classList.toggle("modo-oscuro-gris")
+    header.classList.toggle("modo-oscuro-gris")
+    formImagen.classList.toggle("modo-oscuro-gris-muy-claro")
+    body.classList.toggle("modo-oscuro-gris-claro")
+    formTexto.classList.toggle("modo-oscuro-gris-muy-claro")
+    tituloImagen.classList.toggle("modo-oscuro-gris-oscuro")
+    tituloTexto.classList.toggle("modo-oscuro-gris-oscuro")
+    inputImagen.classList.toggle("modo-oscuro-gris")
+    inputFondo.classList.toggle("modo-oscuro-gris")
+    tipoDeFondo.classList.toggle("modo-oscuro-gris")
+    tipoDeFondo.classList.toggle("modo-oscuro-gris-oscuro")
+    textareaS.classList.toggle("modo-oscuro-gris")
+    textareaI.classList.toggle("modo-oscuro-gris")
+    elegirFuente.classList.toggle("modo-oscuro-gris")
+    size.classList.toggle("modo-oscuro-gris")
+    botonI.classList.toggle("modo-oscuro-gris")
+    botonC.classList.toggle("modo-oscuro-gris")
+    botonD.classList.toggle("modo-oscuro-gris")
+    colorColor.classList.toggle("modo-oscuro-gris")
+    colorFondo.classList.toggle("modo-oscuro-gris")
+    contornoN.classList.toggle("modo-oscuro-gris")
+    contornoC.classList.toggle("modo-oscuro-gris")
+    contornoO.classList.toggle("modo-oscuro-gris")
+    botonEspaciado.classList.toggle("modo-oscuro-gris")
+    botonInterlineado.classList.toggle("modo-oscuro-gris")
+    botonImagen.classList.toggle("estilBoton")
+    botonTexto.classList.toggle("estilBoton")
+    botonModoOscuro.classList.toggle("estilBoton")
+    
+    // botonModoOscuro.textContent = "Modo Claro" - No funciona
+    //     if(botonModoOscuro.classList.contains("oscuro")){
+    //     botonModoOscuro.textContent = "Modo Claro"
+    // }
+    //     else{
+    //     botonModoOscuro.textContent = "Modo Oscuro"
+    // }
+    }
+   
+botonModoOscuro.onclick = activarModoOscuro
+
+
+// Descargar Meme
