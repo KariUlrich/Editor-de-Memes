@@ -49,7 +49,7 @@ const tipoDeFondo = document.getElementById("mezclaDeFondo")
 // tipoDeFondo.onclick = cambiarFondo
 
 tipoDeFondo.onchange = () => {
-    if (tipoDeFondo === "Aclarar"){
+    if (tipoDeFondo.value === "Aclarar"){
         verImagen.style.backgroundBlendMode = "lighten"
     }
     else {
@@ -292,7 +292,7 @@ const colorFondo = document.querySelector(".div-div-fondo")  // input y texto - 
 const contornoN = document.querySelector(".ninguno")
 const contornoC = document.querySelector(".claro")
 const contornoO = document.querySelector(".oscuro")
-
+const botonDescargar = document.getElementById("boton-descargar")
 
 
 const activarModoOscuro = () => {
@@ -310,7 +310,6 @@ const activarModoOscuro = () => {
     inputImagen.classList.toggle("modo-oscuro-gris")
     inputFondo.classList.toggle("modo-oscuro-gris")
     tipoDeFondo.classList.toggle("modo-oscuro-gris")
-    tipoDeFondo.classList.toggle("modo-oscuro-gris-oscuro")
     textareaS.classList.toggle("modo-oscuro-gris")
     textareaI.classList.toggle("modo-oscuro-gris")
     elegirFuente.classList.toggle("modo-oscuro-gris")
@@ -328,7 +327,11 @@ const activarModoOscuro = () => {
     botonImagen.classList.toggle("estilBoton")
     botonTexto.classList.toggle("estilBoton")
     botonModoOscuro.classList.toggle("estilBoton")
-    
+    botonDescargar.classList.toggle("desBoton")
+    inputImagen.classList.toggle("estilBoton")
+    tipoDeFondo.classList.toggle("estilBoton")
+    restablecerFiltros.classList.toggle("estilBoton")
+
     // botonModoOscuro.textContent = "Modo Claro" - No funciona
     //     if(botonModoOscuro.classList.contains("oscuro")){
     //     botonModoOscuro.textContent = "Modo Claro"
