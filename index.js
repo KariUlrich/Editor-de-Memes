@@ -179,21 +179,21 @@ tamanioDeFuente.oninput = () => {
 }
 
 // Alineado - NO FUNCIONA
-const botonI = document.querySelector(".b-izquierda")
-const botonC = document.querySelector(".b-centro")
-const botonD = document.querySelector(".b-derecha")
+const botonIzquierda = document.getElementById("b-izquierda")
+const botonCentro = document.getElementById("b-centro")
+const botonDerecha = document.getElementById("b-derecha")
 
-botonI.onclick = () => {
+botonIzquierda.onclick = () => {
     verTextoSuperior.style.textAlign = "left"
     verTextoInferior.style.textAlign = "left"
 }
 
-botonC.onclick = () => {
+botonCentro.onclick = () => {
     verTextoSuperior.style.textAlign = "center"
     verTextoInferior.style.textAlign = "center"
 }
 
-botonD.onclick = () => {
+botonDerecha.onclick = () => {
     verTextoSuperior.style.textAlign = "right"
     verTextoInferior.style.textAlign = "right"
 }
@@ -265,11 +265,16 @@ espaciado.onclick = hacerEspacio
 // Interlineado - NO FUNCIONA
 const interlineado = document.getElementById("select-interlineado")
 
-const hacerInterlineado = () => {
+interlineado.onclick = () => {
     verTextoSuperior.style.lineHeight = interlineado.value
     verTextoInferior.style.lineHeight = interlineado.value
 }
-interlineado.onclick = hacerInterlineado
+
+// const hacerInterlineado = () => {
+//     verTextoSuperior.style.lineHeight = interlineado.value
+//     verTextoInferior.style.lineHeight = interlineado.value
+// }
+// interlineado.onclick = hacerInterlineado
 
 //----------------------------------------------------------------------------------------------------
 // Modo Oscuro
@@ -314,9 +319,9 @@ const activarModoOscuro = () => {
     textareaI.classList.toggle("modo-oscuro-gris")
     elegirFuente.classList.toggle("modo-oscuro-gris")
     size.classList.toggle("modo-oscuro-gris")
-    botonI.classList.toggle("modo-oscuro-gris")
-    botonC.classList.toggle("modo-oscuro-gris")
-    botonD.classList.toggle("modo-oscuro-gris")
+    botonIzquierda.classList.toggle("modo-oscuro-gris")
+    botonCentro.classList.toggle("modo-oscuro-gris")
+    botonDerecha.classList.toggle("modo-oscuro-gris")
     colorColor.classList.toggle("modo-oscuro-gris")
     colorFondo.classList.toggle("modo-oscuro-gris")
     contornoN.classList.toggle("modo-oscuro-gris")

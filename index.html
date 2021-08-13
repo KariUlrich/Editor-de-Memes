@@ -16,7 +16,7 @@
         <div class="titulo-principal">
             <h1 id="generador">Generador de memes</h1>
         </div>
-        <nav Class="botones">
+        <nav class="botones">
             <button class="div-imagen estiloBoton">
             <i class="far fa-file-image"></i>
             <p>Imagen</p>
@@ -33,11 +33,11 @@
     </header>
     <main>
     <section class="section2">
-        <div class="texto-superior" id="texto-superior">TOP TEXT</div>
+        <p class="texto-superior" id="texto-superior">TOP TEXT</p>
         <div class="imagen-entretexto">
           <img src="" id="meme" class="imagen-fondo">
         </div>
-        <div class="texto-inferior" id="texto-inferior">BOTTOM TEXT</div>
+        <p class="texto-inferior" id="texto-inferior">BOTTOM TEXT</p>
         <button class="descargar" id="boton-descargar">
         <i class="fas fa-download"></i>Descargar meme
         </button>
@@ -50,7 +50,7 @@
                 <h3>URL</h3>
                 <input type="text" class="url-imagen" id="url-imagen" name="url">
             </div>
-            <div Class="div-fondo izquierda">
+            <div class="div-fondo izquierda">
                 <h3>Fondo</h3>
                 <div class="div-fondo-input">
                   <div class="div-solo-input">
@@ -126,10 +126,10 @@
            </select>
            <div class="size-letra">
             <input type="number" class="size" id="size" min="10">
-            <div class="orientacion">
-            <button class="b-izquierda" id="boton-izquierda"><i class="fas fa-align-left"></i></button>
-            <button class="b-centro" id="boton-centro"><i class="fas fa-align-center"></i></button>
-            <button class="b-derecha" id="boton-derecha"><i class="fas fa-align-right"></i></button>
+            <div>
+            <button class="b-izquierda" id="b-izquierda"><i class="fas fa-align-left"></i></button>
+            <button class="b-centro" id="b-centro"><i class="fas fa-align-center"></i></button>
+            <button class="b-derecha" id="b-derecha"><i class="fas fa-align-right"></i></button>
             </div>
           </div>
           <div class="color-fondo">
@@ -182,11 +182,6 @@
            </div>
         </form>
     </aside>  
-
-
-
-
-
     <script src="index.js"></script>
 </body>
 </html>

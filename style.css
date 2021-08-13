@@ -65,6 +65,7 @@ i{
     justify-content: center;
     font-size: 28px;
     font-weight: bolder;
+    margin: 0;
  }
  .imagen-entretexto {
     height: 380px;
@@ -462,3 +463,14 @@ button:focus{
 .estiBoton:focus{
     background-color: rgb(199, 189, 189);
 }
+
+/* Responsive */
+
+@media screen and (max-width: 990px) and (min-width: 850px) {
+    .formulario-texto,
+    .formulario-imagen {
+            display: none;
+                }
+        
+    }
+
