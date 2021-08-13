@@ -38,14 +38,27 @@ fondoImagen.oninput = () => {
 
 const tipoDeFondo = document.getElementById("mezclaDeFondo")
 
-// const cambiarFondo = () => {
-//     if (tipoDeFondo === "Aclarar"){
-//         verImagen.style.backgroundBlendMode = "lighten"
-//     }
-//     else {
-//         verImagen.style.backgroundBlendMode = "none"
-//     }
-// }
+const cambiarFondo = () => {
+    if (tipoDeFondo.value === "Aclarar"){
+        verImagen.style.backgroundBlendMode = "lighten"
+}
+        else if(tipoDeFondo.value === "Oscurecer"){
+            verImagen.style.backgroundBlendMode = "darken"
+}       
+        else if(tipoDeFondo.value === "Diferencia"){
+    verImagen.style.backgroundBlendMode = "difference"
+}       
+        else if(tipoDeFondo.value === "Luminosidad"){
+    verImagen.style.backgroundBlendMode = "luminisity"
+}       
+        else if(tipoDeFondo.value === "Multiplicar"){
+    verImagen.style.backgroundBlendMode = "multiply"
+}       
+    else {
+        verImagen.style.backgroundBlendMode = "none"
+    }
+}
+
 // tipoDeFondo.onclick = cambiarFondo
 
 tipoDeFondo.onchange = () => {
