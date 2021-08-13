@@ -15,8 +15,9 @@ const mostrarDivTexto = () =>{
 }
 botonImagen.onclick = mostrarDivImagen
 botonTexto.onclick = mostrarDivTexto
-// ---------------------------------------------------------------------------------------------
-/////////////////////////////////////////////// Formulario Imagen
+
+/////////////////////////////////////////////// Formulario Imagen ////////////////////////////////////////////////
+
 // URL
 const inputImagen = document.querySelector(".url-imagen")
 const verImagen = document.getElementById("meme")
@@ -34,41 +35,31 @@ fondoImagen.oninput = () => {
     divImagen.style.backgroundColor = fondoImagen.value // div que contiene al meme - input color imagen
     textoColorFondo.textContent = fondoImagen.value
 }
+
 // Apariencia del fondo - No funciona
-
 const tipoDeFondo = document.getElementById("mezclaDeFondo")
-
-const cambiarFondo = () => {
-    if (tipoDeFondo.value === "Aclarar"){
-        verImagen.style.backgroundBlendMode = "lighten"
-}
-        else if(tipoDeFondo.value === "Oscurecer"){
-            verImagen.style.backgroundBlendMode = "darken"
-}       
-        else if(tipoDeFondo.value === "Diferencia"){
-    verImagen.style.backgroundBlendMode = "difference"
-}       
-        else if(tipoDeFondo.value === "Luminosidad"){
-    verImagen.style.backgroundBlendMode = "luminisity"
-}       
-        else if(tipoDeFondo.value === "Multiplicar"){
-    verImagen.style.backgroundBlendMode = "multiply"
-}       
-    else {
-        verImagen.style.backgroundBlendMode = "none"
-    }
-}
-
-// tipoDeFondo.onclick = cambiarFondo
 
 tipoDeFondo.onchange = () => {
     if (tipoDeFondo.value === "Aclarar"){
-        verImagen.style.backgroundBlendMode = "lighten"
+    verImagen.style.backgroundBlendMode = "lighten"
     }
+    else if(tipoDeFondo.value === "Oscurecer"){
+    verImagen.style.backgroundBlendMode = "darken"
+    }       
+    else if(tipoDeFondo.value === "Diferencia"){
+    verImagen.style.backgroundBlendMode = "difference"
+    }       
+    else if(tipoDeFondo.value === "Luminosidad"){
+    verImagen.style.backgroundBlendMode = "luminosity"
+    }       
+    else if(tipoDeFondo.value === "Multiplicar"){
+    verImagen.style.backgroundBlendMode = "multiply"
+    }       
     else {
         verImagen.style.backgroundBlendMode = "none"
     }
 }
+
 
 // Filtos
 const inputFiltroBrillo = document.getElementById("input-brillo")
@@ -103,9 +94,8 @@ inputFiltroSepia.onchange = cambiarFiltros
 inputFiltroSaturado.onchange = cambiarFiltros
 inputFiltroNegativo.onchange = cambiarFiltros
 
-
 // Boton Restablecer filtros - No funciona
-const restablecerFiltros = document.querySelector(".reestablecerFiltros")
+const restablecerFiltros = document.querySelector(".restablecerFiltros")
 
 restablecerFiltros.onclick = () => {
     inputBrillo.value = 1
@@ -119,7 +109,7 @@ restablecerFiltros.onclick = () => {
     inputNegativo.value = 0
 }
 
-/////////////////////////////////////////////////// Formulario Texto
+/////////////////////////////////////////////////// Formulario Texto//////////////////////////////////////////////7
 // Superior e Inferior
 
 const inputTextoSuperior = document.getElementById("superior")
@@ -211,8 +201,7 @@ botonDerecha.onclick = () => {
     verTextoInferior.style.textAlign = "right"
 }
 
-// Color y Fondo - debe ser igual que color de fondo
-
+// Color y Fondo
 const inputColorTexto = document.getElementById("input-color-texto")
 const inputColorFondo = document.getElementById("input-color-fondo")
 const spanNumeroColor = document.getElementById("numero-texto-color")
@@ -292,7 +281,6 @@ interlineado.onclick = () => {
 //----------------------------------------------------------------------------------------------------
 // Modo Oscuro
 const botonModoOscuro = document.getElementById("boton-modo-oscuro") // boton
-
 const generadorDeMeme = document.querySelector("h1") // Titulo - gris oscuro
 const header = document.querySelector(".section1") // header - gris mas claro
 const body = document.querySelector("body") // body
@@ -362,4 +350,9 @@ const activarModoOscuro = () => {
 botonModoOscuro.onclick = activarModoOscuro
 
 
-// Descargar Meme
+// Descargar Meme - No funciona
+botonDescargar.onclick = () => {
+  domtoimage.toBlob(divImagen).then(function (blob) {
+    window.saveAs(blob, "elmeme.png")
+  })
+}

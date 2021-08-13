@@ -9,7 +9,7 @@
 
 ### Enlace al proyecto para visitarlo
 
-[Link al proyecto](..)
+[Link al proyecto](https://kariulrich.github.io/Editor-de-Memes/)
 
 ### Podras diseñar el meme mas divertido!
 

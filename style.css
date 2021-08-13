@@ -224,7 +224,7 @@ input[type="range"] {
 .input-range:focus{
    background-color: rgb(209, 207, 207);
 }
-.reestablecerFiltros {
+.restablecerFiltros {
     height: 40px; 
     background-color: rgb(73, 72, 72);;
     color: white;
@@ -236,10 +236,10 @@ input[type="range"] {
     font-size: 16px;
     outline: none;
   }    
-  .reestablecerFiltros:hover{
+  .restablecerFiltros:hover{
     background-color: rgb(129, 126, 126);
   }
-  .reestablecerFiltros:focus{
+  .restablecerFiltros:focus{
     background-color: rgb(129, 126, 126);
   }
 /* Formulario Texto */
