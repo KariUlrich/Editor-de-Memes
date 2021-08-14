@@ -126,34 +126,24 @@ inputTextoSuperior.oninput = () => {
 inputTextoInferior.oninput = () => {
     verTextoInferior.textContent = inputTextoInferior.value
 }
-//Sin texto superior y sin texto inferior - falta si clequeo los dos
-
+//Sin texto superior y sin texto inferior
 const sinTextoSuperior = document.getElementById("input-sin-texto-superior")
 const sinTextoInferior = document.getElementById("input-sin-texto-inferior")
 
 sinTextoSuperior.oninput = () => {
     if(sinTextoSuperior.checked) {
         verTextoSuperior.style.display = "none";
-        divImagen.classList.add("imagen-sin-texto-superior");
     }
     else {
         verTextoSuperior.style.display = "flex";
-        divImagen.classList.remove("imagen-sin-texto-superior");
     }
 }
 sinTextoInferior.oninput = () => {
     if(sinTextoInferior.checked) {
         verTextoInferior.style.display = "none";
-        divImagen.classList.add("imagen-sin-texto-superior");
     }
-    // else if (sinTextoSuperior.checked && sinTextoInferior.cheked) {
-    //     verTextoSuperior.style.display = "none";
-    //     verTextoInferior.style.display = "none";
-    //     divImagen.classList.add("imagen-sin-texto-superior-inferior");
-    // }
     else {
         verTextoInferior.style.display = "flex";
-        divImagen.classList.remove("imagen-sin-texto-superior");
     }
 }
 

@@ -55,34 +55,39 @@ i{
     align-items: center;
     justify-content: center;
  }
+ .contendor-meme{
+    height: 620px;
+    width: 650px;
+    background-color: black;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+ }
  .texto-superior,
  .texto-inferior {
-    height: 120px;
-    width: 650px;
     background-color: white;
-    display: flex;
-    align-items: center;
     justify-content: center;
+    text-align: center;
     font-size: 28px;
     font-weight: bolder;
     margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 2.5;  
  }
  .imagen-entretexto {
-    height: 380px;
-    width: 650px;
     background-color: black;
     overflow: hidden;
-  }
-  .imagen-sin-texto-superior {
-    height: 500px;
-    width: 650px;
-  }
-  .imagen-sin-texto-superior-inferior {
-    height: 620px;
-    width: 650px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    
   }
   .imagen-fondo{
       width: 100%;
+      overflow: hidden;
   }
   .descargar{
     width: 180px;
