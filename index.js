@@ -36,30 +36,31 @@ fondoImagen.oninput = () => {
     textoColorFondo.textContent = fondoImagen.value
 }
 
-// Apariencia del fondo - No funciona
+// Apariencia del fondo
 const tipoDeFondo = document.getElementById("mezclaDeFondo")
 
 tipoDeFondo.onchange = () => {
     if (tipoDeFondo.value === "aclarar"){
-    verImagen.style.backgroundBlendMode = "lighten"
+        verImagen.style.mixBlendMode = "lighten"
     }
     else if(tipoDeFondo.value === "oscurecer"){
-    verImagen.style.backgroundBlendMode = "darken"
+    verImagen.style.mixBlendMode = "darken"
     }       
     else if(tipoDeFondo.value === "diferencia"){
-    verImagen.style.backgroundBlendMode = "difference"
+    verImagen.style.mixBlendMode = "difference"
     }       
     else if(tipoDeFondo.value === "luminosidad"){
-    verImagen.style.backgroundBlendMode = "luminosity"
+    verImagen.style.mixBlendMode = "luminosity"
     }       
     else if(tipoDeFondo.value === "multiplicar"){
-    verImagen.style.backgroundBlendMode = "multiply"
+    verImagen.style.mixBlendMode = "multiply"
     }       
     else {
-        verImagen.style.backgroundBlendMode = "none"
+    verImagen.style.mixBlendMode = "normal"
     }
 }
 
+// divImagen.style.backgroundColor = colorFondo.value
 
 // Filtos
 const inputFiltroBrillo = document.getElementById("input-brillo")
@@ -94,19 +95,20 @@ inputFiltroSepia.onchange = cambiarFiltros
 inputFiltroSaturado.onchange = cambiarFiltros
 inputFiltroNegativo.onchange = cambiarFiltros
 
-// Boton Restablecer filtros - No funciona
-const restablecerFiltros = document.querySelector(".restablecerFiltros")
+// Boton Restablecer filtros 
+const restablecerFiltros = document.getElementById("restablecerFiltros")
 
 restablecerFiltros.onclick = () => {
-    inputBrillo.value = 1
-    inputOpacidad.value = 1
-    inputContraste.value = 0
-    inputDesenfoque.value = 0
-    inputEscalaDeGrises.value = 0
-    inputSepia.value = 0
-    inputHue.value = 0
-    inputSaturado.value = 100
-    inputNegativo.value = 0
+    inputFiltroBrillo.value = 1
+    inputFiltroOpacidad.value = 1
+    inputFiltroContraste.value = 0
+    inputFiltroDesenfoque.value = 0
+    inputFiltroEscalaDeGrises.value = 0
+    inputFiltroSepia.value = 0
+    inputFiltroHue.value = 0
+    inputFiltroSaturado.value = 100
+    inputFiltroNegativo.value = 0
+    verImagen.style.filter = "none"
 }
 
 
@@ -132,33 +134,20 @@ const sinTextoInferior = document.getElementById("input-sin-texto-inferior")
 
 sinTextoSuperior.oninput = () => {
     if(sinTextoSuperior.checked) {
-        verTextoSuperior.style.display = "none";
+        verTextoSuperior.style.display = "none"
     }
     else {
-        verTextoSuperior.style.display = "flex";
+        verTextoSuperior.style.display = "flex"
     }
 }
 sinTextoInferior.oninput = () => {
     if(sinTextoInferior.checked) {
-        verTextoInferior.style.display = "none";
+        verTextoInferior.style.display = "none"
     }
     else {
-        verTextoInferior.style.display = "flex";
+        verTextoInferior.style.display = "flex"
     }
 }
-
-//Sintexto - NO FUNCIONA
- const sinTextoSuperiorEInferior = document.querySelectorAll(".sin-ningun-texto")
-
- sinTextoSuperiorEInferior.oninput = () => {
-    if(inTextoSuperiorEInferior.checked) {
-        verTextoSuperior.style.display = "none";
-        verTextoInferior.style.display = "none";
-        divImagen.classList.add("imagen-sin-texto-superior-inferior");
-    }
-    
-}
-
 // Tipo Fuente
 const tipoDeFuente = document.getElementById("elegir-fuente")
 tipoDeFuente.oninput = () => {
@@ -211,17 +200,16 @@ inputColorFondo.oninput = () => {
 }
 
 // Fondo transparente
-
 const fondoTransparente = document.getElementById("fondo-transparente")
 
 fondoTransparente.oninput = () => {
     if(fondoTransparente.checked){
-        verTextoSuperior.style.backgroundColor = "transparent"
-        verTextoInferior.style.backgroundColor = "transparent"
+        verTextoSuperior.style.display = "none"
+        verTextoInferior.style.display = "none"
     }
     else{
-        verTextoSuperior.style.backgroundColor = inputColorFondo.value
-        verTextoInferior.style.backgroundColor = inputColorFondo.value
+        verTextoSuperior.style.display = "flex"
+        verTextoInferior.style.display = "flex"
     }
 }
 
