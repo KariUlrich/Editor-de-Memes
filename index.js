@@ -40,19 +40,19 @@ fondoImagen.oninput = () => {
 const tipoDeFondo = document.getElementById("mezclaDeFondo")
 
 tipoDeFondo.onchange = () => {
-    if (tipoDeFondo.value === "Aclarar"){
+    if (tipoDeFondo.value === "aclarar"){
     verImagen.style.backgroundBlendMode = "lighten"
     }
-    else if(tipoDeFondo.value === "Oscurecer"){
+    else if(tipoDeFondo.value === "oscurecer"){
     verImagen.style.backgroundBlendMode = "darken"
     }       
-    else if(tipoDeFondo.value === "Diferencia"){
+    else if(tipoDeFondo.value === "diferencia"){
     verImagen.style.backgroundBlendMode = "difference"
     }       
-    else if(tipoDeFondo.value === "Luminosidad"){
+    else if(tipoDeFondo.value === "luminosidad"){
     verImagen.style.backgroundBlendMode = "luminosity"
     }       
-    else if(tipoDeFondo.value === "Multiplicar"){
+    else if(tipoDeFondo.value === "multiplicar"){
     verImagen.style.backgroundBlendMode = "multiply"
     }       
     else {
@@ -108,6 +108,8 @@ restablecerFiltros.onclick = () => {
     inputSaturado.value = 100
     inputNegativo.value = 0
 }
+
+
 
 /////////////////////////////////////////////////// Formulario Texto//////////////////////////////////////////////7
 // Superior e Inferior
@@ -338,7 +340,7 @@ const activarModoOscuro = () => {
     tipoDeFondo.classList.toggle("estilBoton")
     restablecerFiltros.classList.toggle("estilBoton")
 
-    // botonModoOscuro.textContent = "Modo Claro" - No funciona
+     
     //     if(botonModoOscuro.classList.contains("oscuro")){
     //     botonModoOscuro.textContent = "Modo Claro"
     // }

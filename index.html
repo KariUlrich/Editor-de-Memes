@@ -25,7 +25,7 @@
             <i class="fas fa-font"></i>
             <p>Texto</p>
             </button>
-            <button class="div-modo estiloBoton" id="boton-modo-oscuro">
+            <button class="div-modo estiloBoton" id="boton-modo-oscuro" arial-label="Cambiar de modo">
             <i class="far fa-lightbulb"></i>
             <p class="modoO">Modo Oscuro</p>
             </button>
@@ -35,7 +35,7 @@
     <section class="section2">
         <p class="texto-superior" id="texto-superior">TOP TEXT</p>
         <div class="imagen-entretexto">
-          <img src="" id="meme" class="imagen-fondo">
+          <img src="" id="meme" class="imagen-fondo" arial-label="Imagen del Meme">
         </div>
         <p class="texto-inferior" id="texto-inferior">BOTTOM TEXT</p>
         <button class="descargar" id="boton-descargar">
@@ -54,10 +54,10 @@
                 <h3>Fondo</h3>
                 <div class="div-fondo-input">
                   <div class="div-solo-input">
-                    <input type="color" class="input-paleta-color" id="colorFondo" name= "colorFondo" value="#FFFFFF">
+                    <input type="color" arial-label="Color de fondo imagen" class="input-paleta-color" id="colorFondo" name= "colorFondo" value="#FFFFFF">
                     <span class="texto-colorFondo">#FFFFFF</span>
                   </div>
-                  <select class="mezclaDeFondo" id="mezclaDeFondo" name="opcionesFondo">
+                  <select class="mezclaDeFondo" id="mezclaDeFondo" name="opcionesFondo" arial-label="Modo mezcla fonde de imagen">
                     <option value="ninguno">Ninguno</option>
                     <option value="aclarar">Aclarar</option>
                     <option value="oscurecer">Oscurecer</option>
@@ -89,7 +89,7 @@
                     <input type="range" class="input-range" id="input-negativo" name="negativo" min="0" max="1" step="0.1" value="0">
             </div>
             <div>
-                <button class="restablecerFiltros">Restablecer filtros</button>
+                <button type="button" class="restablecerFiltros" id="restablecerFiltros">Restablecer filtros</button>
             </div>
         </form>    
     </aside>
@@ -98,7 +98,7 @@
             <h2>TEXTO</h2>
             <div class="div-superior">
                 <h3>SUPERIOR</h3>
-                <textarea name="texto" id="superior" cols="50" rows="2"> TOP TEXT</textarea>
+                <textarea name="texto" arial-label="Texto superior" id="superior" cols="50" rows="2"> TOP TEXT</textarea>
                 <div class="checkbox-superior">
                 <input type="checkbox" id="input-sin-texto-superior" class="sin-ningun-texto">
                 <label for="superior" id="label-superior">Sin texto superior</label> 
@@ -106,14 +106,14 @@
             </div>
             <div class="div-inferior">
                 <h3>INFERIOR</h3>
-                <textarea name="texto" id="inferior" cols="50" rows="2"> BOTTOM TEXT</textarea>
+                <textarea name="texto" arial-label="Texto inferior" id="inferior" cols="50" rows="2"> BOTTOM TEXT</textarea>
                 <div class="checkbox-inferior">
                 <input type="checkbox" id="input-sin-texto-inferior"class="sin-ningun-texto">
                 <label for="inferior" id="label-inferior">Sin texto inferior</label> 
                 </div>
             </div>
             <h3>FUENTE</h3>
-           <select name="fuente" id="elegir-fuente" class="elegir-fuente">
+           <select name="fuente" id="elegir-fuente" class="elegir-fuente" arial-label="Fuente">
              <option value="Arial" selected="">Arial</option>
              <option value="Arial Black">Arial Black</option>
              <option value="American Typewriter">American Typewriter</option>
@@ -125,25 +125,25 @@
              <option value="Times New Roman">Times New Roman</option>
            </select>
            <div class="size-letra">
-            <input type="number" class="size" id="size" min="10">
+            <input type="number" class="size" id="size" min="12" value="40" arial-label="Tamaño de fuente">
             <div>
-            <button class="b-izquierda" id="b-izquierda"><i class="fas fa-align-left"></i></button>
-            <button class="b-centro" id="b-centro"><i class="fas fa-align-center"></i></button>
-            <button class="b-derecha" id="b-derecha"><i class="fas fa-align-right"></i></button>
+            <button type="button" class="b-izquierda" id="b-izquierda"><i class="fas fa-align-left"></i></button>
+            <button type="button" class="b-centro" id="b-centro"><i class="fas fa-align-center"></i></button>
+            <button type="button" class="b-derecha" id="b-derecha"><i class="fas fa-align-right"></i></button>
             </div>
           </div>
           <div class="color-fondo">
               <div class="div-color">
               <h3>COLOR </h3>
               <div class="div-div-color">
-                <input name="colorTexto" type="color" class="input-paleta-color" id="input-color-texto" value="#000000">
+                <input name="colorTexto" type="color" aria-label="color de texto" class="input-paleta-color" id="input-color-texto" value="#000000">
                 <span id="numero-texto-color">#000000</span>
               </div>
               </div>        
             <div class="div-fondo">
               <h3>FONDO</h3>
               <div class="div-div-fondo">
-                <input name="colorFondo" type="color" class="input-paleta-color" id="input-color-fondo" value="#FFFFFF">
+                <input name="colorFondo" type="color" aria-label="color de fondo de texto" class="input-paleta-color" id="input-color-fondo" value="#FFFFFF">
                 <span id="numero-texto-fondo">#FFFFFF</span>
               </div>
             </div>        
@@ -155,22 +155,22 @@
 
            <div class="div-contorno">
             <h3>CONTORNO</h3>
-            <button class="ninguno" id="ninguno">Ninguno</button>
-            <button class="claro" id="claro">Claro</button>
-            <button class="oscuro" id="oscuro">Oscuro</button>
+            <button type="button" class="ninguno" id="ninguno">Ninguno</button>
+            <button type="button" class="claro" id="claro">Claro</button>
+            <button type="button" class="oscuro" id="oscuro">Oscuro</button>
             </div>
             
             <div class="div-espaciado">
             <label for="espaciado">
               <h3>ESPACIADO</h3>
-              <input type="number" class="espaciado" id="input-espaciado">
+              <input type="number" aria-label="espaciado"class="espaciado" id="input-espaciado">
             </label>
             </div>
             
             <div class="div-interlineado">
               <label for="interlineado">
               <h3>INTERLINEADO</h3>
-              <select name="interlineado" class="interlineado" id="select-interlineado">
+              <select name="interlineado" aria-label="interlineado" class="interlineado" id="select-interlineado">
               <option value="0.8">0.8</option>
               <option value="1">1</option>
               <option value="1.2">1.2</option>
