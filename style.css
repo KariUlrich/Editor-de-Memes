@@ -36,7 +36,7 @@ h1{
     background-color: rgb(73, 72, 72);
 }
 .estiloBoton:focus{
-    background-color: rgb(73, 72, 72);
+    background-color: rgb(126, 119, 119);
 }
 
 .botones{
@@ -100,7 +100,6 @@ i{
     border-radius: 3px;
     border: none;    
     font-size: 16px;
-    margin-top: 20px;   
     cursor: pointer; 
     outline: none;
   }
@@ -231,6 +230,7 @@ input[type="range"] {
 }
 .restablecerFiltros {
     height: 40px; 
+    width: 160px;
     background-color: rgb(73, 72, 72);;
     color: white;
     padding: 10px;

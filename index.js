@@ -60,8 +60,6 @@ tipoDeFondo.onchange = () => {
     }
 }
 
-// divImagen.style.backgroundColor = colorFondo.value
-
 // Filtos
 const inputFiltroBrillo = document.getElementById("input-brillo")
 const inputFiltroOpacidad = document.getElementById("input-opacidad")
@@ -110,7 +108,6 @@ restablecerFiltros.onclick = () => {
     inputFiltroNegativo.value = 0
     verImagen.style.filter = "none"
 }
-
 
 
 /////////////////////////////////////////////////// Formulario Texto//////////////////////////////////////////////7
@@ -162,7 +159,7 @@ tamanioDeFuente.oninput = () => {
     verTextoInferior.style.fontSize = tamanioDeFuente.value + "px"
 }
 
-// Alineado - NO FUNCIONA
+// Alineado
 const botonIzquierda = document.getElementById("b-izquierda")
 const botonCentro = document.getElementById("b-centro")
 const botonDerecha = document.getElementById("b-derecha")
@@ -213,7 +210,7 @@ fondoTransparente.oninput = () => {
     }
 }
 
-// Contorno - NO FUNCIONA
+// Contorno
 const botonContornoClaro = document.getElementById("claro")
 const botonContornoOscuro = document.getElementById("oscuro")
 const botonSinContorno = document.getElementById("ninguno")
@@ -244,19 +241,13 @@ const hacerEspacio = () => {
 }
 espaciado.onclick = hacerEspacio
 
-// Interlineado - NO FUNCIONA
+// Interlineado
 const interlineado = document.getElementById("select-interlineado")
 
 interlineado.onclick = () => {
     verTextoSuperior.style.lineHeight = interlineado.value
     verTextoInferior.style.lineHeight = interlineado.value
 }
-
-// const hacerInterlineado = () => {
-//     verTextoSuperior.style.lineHeight = interlineado.value
-//     verTextoInferior.style.lineHeight = interlineado.value
-// }
-// interlineado.onclick = hacerInterlineado
 
 //----------------------------------------------------------------------------------------------------
 // Modo Oscuro
@@ -279,6 +270,7 @@ const contornoN = document.querySelector(".ninguno")
 const contornoC = document.querySelector(".claro")
 const contornoO = document.querySelector(".oscuro")
 const botonDescargar = document.getElementById("boton-descargar")
+const pModoOscuro = document.getElementById(".modoO")
 
 
 const activarModoOscuro = () => {
@@ -317,15 +309,15 @@ const activarModoOscuro = () => {
     inputImagen.classList.toggle("estilBoton")
     tipoDeFondo.classList.toggle("estilBoton")
     restablecerFiltros.classList.toggle("estilBoton")
-
-     
-    //     if(botonModoOscuro.classList.contains("oscuro")){
-    //     botonModoOscuro.textContent = "Modo Claro"
+    pModoOscuro.textContent = "Modo Claro"
+    
+    // if(pModoOscuro.textContent === "Modo Claro"){
+    //     pModoOscuro.textContent = "Modo Oscuro"
     // }
-    //     else{
-    //     botonModoOscuro.textContent = "Modo Oscuro"
+    // else{
+    //     pModoOscuro.textContent = "Modo Oscuro"
     // }
-    }
+}
    
 botonModoOscuro.onclick = activarModoOscuro
 
