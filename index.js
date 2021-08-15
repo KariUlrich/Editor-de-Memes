@@ -37,8 +37,6 @@ fondoImagen.oninput = () => {
     textoColorFondo.textContent = fondoImagen.value.toUpperCase();
 }
 
-// textoColorFondo.textContent = fondoImagen.value.toUpperCase();
-
 // Apariencia del fondo
 const tipoDeFondo = document.getElementById("mezclaDeFondo")
 
@@ -162,7 +160,7 @@ tamanioDeFuente.oninput = () => {
     verTextoInferior.style.fontSize = tamanioDeFuente.value + "px"
 }
 
-// Alineado
+// Alineado - (no se porque no simpre funciona, de entrada si, pero cuando le pones colores no funciona)
 const botonIzquierda = document.getElementById("b-izquierda")
 const botonCentro = document.getElementById("b-centro")
 const botonDerecha = document.getElementById("b-derecha")
@@ -201,18 +199,24 @@ inputColorFondo.oninput = () => {
     spanNumeroFondo.textContent = inputColorFondo.value.toUpperCase();
 }
 
-// Fondo transparente
+// Fondo transparente - No logre que el texto me quede en el medio
 const fondoTransparente = document.getElementById("fondo-transparente")
 
-fondoTransparente.oninput = () => {
+fondoTransparente.onclick = () => {
     if(fondoTransparente.checked){
-        verTextoSuperior.style.display = "none"
-        verTextoInferior.style.display = "none"
+       verTextoSuperior.style.backgroundColor = "transparent"
+       verTextoInferior.style.backgroundColor = "transparent"
+       verTextoSuperior.style.position = "absolute" 
+       verTextoInferior.style.position = "absolute"
+       verTextoSuperior.style.top = "0" 
+       verTextoInferior.style.bottom = "0"
     }
     else{
-        verTextoSuperior.style.display = "flex"
-        verTextoInferior.style.display = "flex"
-    }
+        verTextoSuperior.style.position = "static" 
+        verTextoInferior.style.position = "static"
+        verTextoSuperior.style.backgroundColor = inputColorFondo.value
+        verTextoInferior.style.backgroundColor = inputColorFondo.value
+    }   
 }
 
 // Contorno
