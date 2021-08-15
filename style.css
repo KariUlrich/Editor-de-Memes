@@ -475,8 +475,83 @@ button:focus{
 @media (max-width: 990px) {
     .formulario-texto,
     .formulario-imagen {
-            position: static;
-                }
-        
+      position: static;
+      margin-top: 50px;
     }
+    body {
+      display: flex;
+      flex-direction: column;
+      /* justify-content: center; */
+      align-items: center;
+    }
+    .section1 {
+      width: 100%;
+    }
+  }
+  @media (max-width: 750px) {
+    .contendor-meme {
+      height: 420px;
+      width: 450px;
+    }
+    .texto-superior,
+    .texto-inferior {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+  @media (max-width: 550px) {
+    .contendor-meme {
+      height: 320px;
+      width: 350px;
+    }
+    .texto-superior,
+    .texto-inferior {
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+    .form-imagen h2 {
+      font-size: 16px;
+    }
+    .form-imagen h3 {
+      font-size: 12px;
+    }
+    .form-texto h2 {
+      font-size: 16px;
+    }
+    .form-texto h3 {
+      font-size: 12px;
+    }
+    .div-filtros label {
+      font-size: 10px;
+    }
+    .checkbox-superior,
+    .checkbox-inferior label {
+      font-size: 10px;
+    }
+    .fondo-transparente {
+      font-size: 10px;
+    }
+    .ninguno,
+    .claro,
+    .oscuro {
+      font-size: 13px;
+    }
+  }
+  @media (max-width: 430px) {
+    .contendor-meme {
+      height: 250px;
+      width: 280px;
+    }
+    .texto-superior,
+    .texto-inferior {
+      font-size: 20px;
+    }
+    h1 {
+      font-size: 30px;
+    }
+    .estiloBoton {
+      font-size: 12px;
+    }
+  }
+
 
