@@ -472,10 +472,10 @@ button:focus{
 
 /* Responsive */
 
-@media screen and (max-width: 990px) and (min-width: 850px) {
+@media (max-width: 990px) {
     .formulario-texto,
     .formulario-imagen {
-            display: none;
+            position: static;
                 }
         
     }

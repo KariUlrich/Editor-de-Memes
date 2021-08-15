@@ -18,7 +18,7 @@ botonTexto.onclick = mostrarDivTexto
 
 /////////////////////////////////////////////// Formulario Imagen ////////////////////////////////////////////////
 
-// URL
+// ingresar foto - URL
 const inputImagen = document.querySelector(".url-imagen")
 const verImagen = document.getElementById("meme")
 
@@ -26,7 +26,7 @@ inputImagen.oninput = () => {
     verImagen.src = inputImagen.value
 }
 
-// Fondo
+// Color de Fondo Imagen
 const fondoImagen = document.getElementById("colorFondo")
 const textoColorFondo = document.querySelector(".texto-colorFondo")
 const divImagen = document.querySelector(".imagen-entretexto")
@@ -61,7 +61,7 @@ tipoDeFondo.onchange = () => {
     }
 }
 
-// Filtos
+// Filtos del fondo
 const inputFiltroBrillo = document.getElementById("input-brillo")
 const inputFiltroOpacidad = document.getElementById("input-opacidad")
 const inputFiltroContraste = document.getElementById("input-contraste")
@@ -112,7 +112,7 @@ restablecerFiltros.onclick = () => {
 
 
 /////////////////////////////////////////////////// Formulario Texto//////////////////////////////////////////////7
-// Superior e Inferior
+// Ingresar texto Superior e Inferior
 
 const inputTextoSuperior = document.getElementById("superior")
 const inputTextoInferior = document.getElementById("inferior")
@@ -148,6 +148,7 @@ sinTextoInferior.oninput = () => {
 }
 // Tipo Fuente
 const tipoDeFuente = document.getElementById("elegir-fuente")
+
 tipoDeFuente.oninput = () => {
     verTextoSuperior.style.fontFamily = tipoDeFuente.value 
     verTextoInferior.style.fontFamily = tipoDeFuente.value 
@@ -155,6 +156,7 @@ tipoDeFuente.oninput = () => {
 
 // Tamanio de fuente
 const tamanioDeFuente = document.getElementById("size")
+
 tamanioDeFuente.oninput = () => {
     verTextoSuperior.style.fontSize = tamanioDeFuente.value + "px"
     verTextoInferior.style.fontSize = tamanioDeFuente.value + "px"
@@ -180,7 +182,7 @@ botonDerecha.onclick = () => {
     verTextoInferior.style.textAlign = "right"
 }
 
-// Color y Fondo
+// Color y Fondo de texto
 const inputColorTexto = document.getElementById("input-color-texto")
 const inputColorFondo = document.getElementById("input-color-fondo")
 const spanNumeroColor = document.getElementById("numero-texto-color")
@@ -219,7 +221,7 @@ fondoTransparente.onclick = () => {
     }   
 }
 
-// Contorno
+// Contorno de tesxto
 const botonContornoClaro = document.getElementById("claro")
 const botonContornoOscuro = document.getElementById("oscuro")
 const botonSinContorno = document.getElementById("ninguno")
@@ -239,7 +241,7 @@ botonSinContorno.onclick = () => {
     verTextoInferior.style.textShadow = "none"
 } 
 
-// Espaciado
+// Espaciado de texto
 const espaciado = document.getElementById("input-espaciado")
 
 const hacerEspacio = () => {
@@ -250,7 +252,7 @@ const hacerEspacio = () => {
 }
 espaciado.onclick = hacerEspacio
 
-// Interlineado
+// Interlineado de texto
 const interlineado = document.getElementById("select-interlineado")
 
 interlineado.onclick = () => {
@@ -279,7 +281,7 @@ const contornoN = document.querySelector(".ninguno")
 const contornoC = document.querySelector(".claro")
 const contornoO = document.querySelector(".oscuro")
 const botonDescargar = document.getElementById("boton-descargar")
-const pModoOscuro = document.getElementById(".modoO")
+const pModoOscuro = document.querySelector(".modoO")
 
 
 const activarModoOscuro = () => {
@@ -318,14 +320,13 @@ const activarModoOscuro = () => {
     inputImagen.classList.toggle("estilBoton")
     tipoDeFondo.classList.toggle("estilBoton")
     restablecerFiltros.classList.toggle("estilBoton")
-    pModoOscuro.textContent = "Modo Claro"
-    
-    // if(pModoOscuro.textContent === "Modo Claro"){
-    //     pModoOscuro.textContent = "Modo Oscuro"
-    // }
-    // else{
-    //     pModoOscuro.textContent = "Modo Oscuro"
-    // }
+        
+    if(pModoOscuro.textContent === "Modo Claro"){
+        pModoOscuro.textContent = "Modo Oscuro"
+    }
+    else{
+        pModoOscuro.textContent = "Modo Claro"
+    }
 }
    
 botonModoOscuro.onclick = activarModoOscuro
