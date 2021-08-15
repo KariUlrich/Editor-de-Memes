@@ -34,7 +34,10 @@ const divImagen = document.querySelector(".imagen-entretexto")
 fondoImagen.oninput = () => {
     divImagen.style.backgroundColor = fondoImagen.value // div que contiene al meme - input color imagen
     textoColorFondo.textContent = fondoImagen.value
+    textoColorFondo.textContent = fondoImagen.value.toUpperCase();
 }
+
+// textoColorFondo.textContent = fondoImagen.value.toUpperCase();
 
 // Apariencia del fondo
 const tipoDeFondo = document.getElementById("mezclaDeFondo")
@@ -189,11 +192,13 @@ inputColorTexto.oninput = () => {
     verTextoSuperior.style.color = inputColorTexto.value
     verTextoInferior.style.color = inputColorTexto.value
     spanNumeroColor.textContent = inputColorTexto.value
+    spanNumeroColor.textContent = inputColorTexto.value.toUpperCase();
 }
 inputColorFondo.oninput = () => {
     verTextoSuperior.style.backgroundColor = inputColorFondo.value
     verTextoInferior.style.backgroundColor = inputColorFondo.value
     spanNumeroFondo.textContent = inputColorFondo.value
+    spanNumeroFondo.textContent = inputColorFondo.value.toUpperCase();
 }
 
 // Fondo transparente
