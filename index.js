@@ -333,8 +333,10 @@ botonModoOscuro.onclick = activarModoOscuro
 
 
 // Descargar Meme - No funciona
+
+const contenedorMeme = document.querySelector(".contendor-meme")
 botonDescargar.onclick = () => {
-  domtoimage.toBlob(divImagen).then(function (blob) {
+  domtoimage.toBlob(contenedorMeme).then(function (blob) {
     window.saveAs(blob, "elmeme.png")
   })
 }
