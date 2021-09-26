@@ -19,6 +19,8 @@
             <h1 id="generador">Generador de memes</h1>
         </div>
         <nav class="botones">
+          <!-- Los nombres de clases en html siempre se separan con-guiones. Reservamos la 
+          sintaxis camelCase para javascript.  -->
             <button class="div-imagen estiloBoton">
             <i class="far fa-file-image"></i>
             <p>Imagen</p>
@@ -29,11 +31,14 @@
             </button>
             <button class="div-modo estiloBoton" id="boton-modo-oscuro" arial-label="Cambiar de modo">
             <i class="far fa-lightbulb"></i>
+            <!-- modoO no es un nombre claro. modo-oscuro es mejor. No sacrifiquen legibilidad en su codigo.  -->
             <p class="modoO">Modo Oscuro</p>
             </button>
         </nav>
     </header>
     <main>
+      <!-- No usen numeros para identificar secciones. No hay tal cosa como seccion1 o seccion2 cuando estamos
+      describiendo las clases en sentido funcional. Esta es la seccion principal, deberia llamarse asi.  -->
     <section class="section2">
         <div class="contendor-meme">
         <p class="texto-superior" id="texto-superior">TOP TEXT</p>
@@ -51,13 +56,30 @@
         <form class="form-imagen">
             <h2>IMAGEN</h2>
             <div clase="div-url izquierda">
+              <!-- Esto no es un h3, es un label para el input. El estilo que finalmente tenga no tiene
+              nada que ver, ya que la etiqueta no describe estilos sino funcion en la web. Esto afecta
+              negativamente la accesibilidad de este sitio - como sabe el usuario de lector de pantalla
+              que este es el input para url si no tiene label ni aria-label? Recuerden que el lector
+              separa los titulos de los elementos de formulario.  
+              Mismo comentario para el resto de sus h3-->
                 <h3>URL</h3>
                 <input type="text" class="url-imagen" id="url-imagen" name="url">
             </div>
             <div class="div-fondo izquierda">
                 <h3>Fondo</h3>
+                <!-- los elementos de html no son descriptores en sentido funcional 
+                  y no deben formar parte de nuestros nombres de clase  -->
                 <div class="div-fondo-input">
                   <div class="div-solo-input">
+                    <!-- cuando los atributos son muchos, dejen saltos de linea para ayudar al lector
+                    a leer sin scroll horizontal
+                    <input 
+                      type="color" 
+                      arial-label="Color de fondo imagen" 
+                      class="input-paleta-color" 
+                      id="colorFondo" 
+                      name= "colorFondo" 
+                      value="#FFFFFF"> -->
                     <input type="color" arial-label="Color de fondo imagen" class="input-paleta-color" id="colorFondo" name= "colorFondo" value="#FFFFFF">
                     <span class="texto-colorFondo">#FFFFFF</span>
                   </div>
@@ -129,6 +151,10 @@
            <div class="size-letra">
             <input type="number" class="size" id="size" min="12" value="40" arial-label="Tamaño de fuente">
             <div>
+              <!-- Dejen saltos de linea cuando son muchos elementos
+              <button type="button" class="b-izquierda" id="b-izquierda">
+                <i class="fas fa-align-left"></i>
+              </button> -->
             <button type="button" class="b-izquierda" id="b-izquierda"><i class="fas fa-align-left"></i></button>
             <button type="button" class="b-centro" id="b-centro"><i class="fas fa-align-center"></i></button>
             <button type="button" class="b-derecha" id="b-derecha"><i class="fas fa-align-right"></i></button>
