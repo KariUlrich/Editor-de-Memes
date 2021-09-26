@@ -41,6 +41,24 @@ fondoImagen.oninput = () => {
 const tipoDeFondo = document.getElementById("mezclaDeFondo")
 
 tipoDeFondo.onchange = () => {
+//     Esta funcion podria ser muchisimo mas sencilla si usaran de manera mas eficiente
+//     el atributo value de HTML, como hicieron en tipoDeFuente
+//     Primero modificamos el HTML para que cada value sea igual a la orden que necesitamos:
+//     <select class="mezclaDeFondo" id="mezclaDeFondo" name="opcionesFondo" arial-label="Modo mezcla fonde de imagen">
+//     <option value="ninguno">Ninguno</option>
+//     <option value="aclarar">Aclarar</option>
+//     <option value="oscurecer">Oscurecer</option>
+//     <option value="diferencia">Diferencia</option>
+//     <option value="luminosidad">Luminosidad</option>
+//     <option value="multiplicar">Multiplicar</option>
+//   </select> 
+
+//   Y ahora nuestra funcion puede ser asi de sencilla:
+//   tipoDeFondo.onchange = () => {
+//     verImagen.style.mixBlendMode = tipoDeFondo.value
+//   }
+
+// ojo con los espacios, sean mas prolijas. dejen espacio antes e las llaves y parentesis
     if (tipoDeFondo.value === "aclarar"){
         verImagen.style.mixBlendMode = "lighten"
     }
@@ -82,6 +100,12 @@ const cambiarFiltros = () => {
     const sepia = inputFiltroSepia.value
     const saturate = inputFiltroSaturado.value
     const invert = inputFiltroNegativo.value
+    // cuando la linea es muy larga, agreguen saltos:
+    // verImagen.style.filter = `
+    //     brightness(${brightness}) opacity(${opacity}) blur(${blur}px) 
+    //     contrast(${contrast}%) grayscale(${grayscale}%) hue-rotate(${hue}deg) 
+    //     sepia(${sepia}%) saturate(${saturate}%) invert(${invert})
+    //     `
     verImagen.style.filter = `brightness(${brightness}) opacity(${opacity}) blur(${blur}px) contrast(${contrast}%) grayscale(${grayscale}%) hue-rotate(${hue}deg) sepia(${sepia}%) saturate(${saturate}%) invert(${invert})`
 }
 inputFiltroBrillo.onchange = cambiarFiltros
@@ -162,7 +186,11 @@ tamanioDeFuente.oninput = () => {
     verTextoInferior.style.fontSize = tamanioDeFuente.value + "px"
 }
 
+
 // Alineado - (no se porque no simpre funciona, de entrada si, pero cuando le pones colores no funciona)
+// Me funciona cuando le pongo colores, pero no cuando pongo el fondo transparente. Eso es porque
+// en ese momento tiene position absolute y deja de ocupar el 100% de su espacio, asi que no se 
+// puede mover. Se arregla agregando width: 100% al darle fondo transparente
 const botonIzquierda = document.getElementById("b-izquierda")
 const botonCentro = document.getElementById("b-centro")
 const botonDerecha = document.getElementById("b-derecha")
@@ -283,7 +311,12 @@ const contornoO = document.querySelector(".oscuro")
 const botonDescargar = document.getElementById("boton-descargar")
 const pModoOscuro = document.querySelector(".modoO")
 
-
+// Esta manera de implementar el modo oscuro / claro es correcta, pero creo que no es escalable. 
+// Es decir, a futuro, si su web crece, se le agregan secciones, etc, va a ser imposible
+// seguir agregando cosas a esta funcion. 
+// Una alternativa mas escalable es la que mencioné en clase: darle una clase al body cuando 
+// se agrega modo-oscuro o modo-claro, y en el CSS darle estilos distintos a los descendientes 
+// Si les genera dudas como hacerlo no dejen de escribirme. 
 const activarModoOscuro = () => {
     generadorDeMeme.classList.toggle("modo-oscuro-gris-oscuro")
     botonImagen.classList.toggle("modo-oscuro-gris")
